@@ -1,5 +1,8 @@
 // Assignment Code
 
+// Initial Array to be modified
+var mainArray = [];
+
 // Array of special characters to be included in password
 var specialCharacters = [
   '@',
@@ -94,79 +97,98 @@ var generateBtn = document.querySelector("#generate");
 
 function generatePassword() {
 
-  var password = [];
-  specInput();
-  numInput();
-  lowerCasedInput();
-  upperCasedInput();
-  password.concat(password);
+  //Declaring password as a string
+  var password = "";
+
+  //User Input in regards to what kinds of characters they want
+  var specInput = confirm("Would you like Special Characters in your password?");
+  var numInput = confirm("Would you like Numeric Characters in your password?");
+  var lowerCasedInput = confirm("Would you like Lower-Cased Characters in your password?");
+  var upperCasedInput = confirm("Would you like Upper-Cased Characters in your password?");
 
 
-// Confirming Special Characters
-function specInput() {
-  if (confirm("Do you want special characters?")) {
-    password.push(...specialCharacters);
-  }
-  else {
-    console.log("No special characters");
-  }
-  console.log(password);
-  return password;
+// Storing values of arrays if declared true
+if (specInput == true) {
+  mainArray.push(specialCharacters);
 }
-
-// Confirming Numeric Characters
-function numInput() {
-  if (confirm("Do you want numeric characters?")) {
-    password.push(...numericCharacters);
-  }
-  else {
-    console.log("No numeric characters");
-  }
-  console.log(password);
-  return password;
+if (numInput == true) {
+  mainArray.push(numericCharacters);
 }
-
-// Confirming Lower Cased Characters
-function lowerCasedInput() {
-  if (confirm("Do you want lower-cased characters?")) {
-    password.push(...lowerCasedCharacters);
-  }
-  else {
-    console.log("No lower-cased characters");
-  }
-  console.log(password);
-  return password;
+if (lowerCasedInput == true) {
+  mainArray.push(lowerCasedCharacters);
 }
-
-// Confirming Upper Cased Characters
-function upperCasedInput() {
-  if (confirm("Do you want upper-cased characters?")) {
-    password.push(...upperCasedCharacters);
-  }
-  else {
-    console.log("No upper-cased characters");
-  }
-  console.log(password);
-  return password;
+if (upperCasedInput == true) {
+  mainArray.push(upperCasedCharacters);
 }
+console.log(mainArray);
 
 }
 
- //  Creating password to user's inputs
- // function generatePassword() {
+// function generatePassword() {
 
- //  var password = [];
+//   var userInput = [];
+//   var password = [];
+//   specInput();
+//   numInput();
+//   lowerCasedInput();
+//   upperCasedInput();
 
-  //  var userData = specInput()
+// // Confirming Special Characters
+// function specInput() {
+//   if (confirm("Do you want special characters?")) {
+//     userInput.push(...specialCharacters);
+//   }
+//   else {
+//     console.log("No special characters");
+//   }
+//   console.log(userInput);
+//   return userInput;
+// }
 
-  //  if (userData) {
-  //    password.push(specialCharacters)
-  //  }
-  //  else {
-  //    console.log("No specialCharacters")
-  //  }
-  //  return password.join("  ");
-  //  }
+// // Confirming Numeric Characters
+// function numInput() {
+//   if (confirm("Do you want numeric characters?")) {
+//     userInput.push(...numericCharacters);
+//   }
+//   else {
+//     console.log("No numeric characters");
+//   }
+//   console.log(userInput);
+//   return userInput;
+// }
+
+// // Confirming Lower Cased Characters
+// function lowerCasedInput() {
+//   if (confirm("Do you want lower-cased characters?")) {
+//     userInput.push(...lowerCasedCharacters);
+//   }
+//   else {
+//     console.log("No lower-cased characters");
+//   }
+//   console.log(userInput);
+//   return userInput;
+// }
+
+// // Confirming Upper Cased Characters
+// function upperCasedInput() {
+//   if (confirm("Do you want upper-cased characters?")) {
+//     userInput.push(...upperCasedCharacters);
+//   }
+//   else {
+//     console.log("No upper-cased characters");
+//   }
+//   console.log(userInput);
+//   return userInput;
+// }
+
+// // Confirming Character Length of the Password
+//   var userLength = parseInt(prompt("How many characters would you like to have in your password between 8 and 128?"), 10);
+//   console.log(userLength + " characters long");
+
+//   //Randomly Selecting the Characters for the Password
+//   password = userLength[Math.floor(Math.random() * userInput.length)];
+//   console.log(password);
+// }
 
 // Write password to the #password input
 function writePassword() {

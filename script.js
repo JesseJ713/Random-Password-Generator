@@ -119,7 +119,7 @@ function generatePassword() {
   var userLength = parseInt(prompt("How long of a password would you like to generate? Please choose between 8 and 128 characters."));
 
   //Establishing character validation
-  while (userLength < 8 || userLength > 128 || userLength === NaN || userLength === null || userLength === undefined || typeof(userLength) != "number") {
+  while (userLength < 8 || userLength > 128 || userLength === NaN || userLength === null || userLength === undefined || Number.isNaN(userLength)) {
     userLength = parseInt(prompt("Please choose between 8 and 128 characters for optimal password generated."));
 
   }

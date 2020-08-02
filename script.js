@@ -123,90 +123,38 @@ function generatePassword() {
     userLength = parseInt(prompt("Please choose between 8 and 128 characters for optimal password generated."));
 
   }
+  console.log(userLength + " is the length chosen");
 
 
-// Storing values of arrays if declared true
+// Storing values of arrays into single array if declared true
 if (specInput == true) {
-  mainArray.push(specialCharacters);
+  mainArray.push(...specialCharacters);
 }
 if (numInput == true) {
-  mainArray.push(numericCharacters);
+  mainArray.push(...numericCharacters);
 }
 if (lowerCasedInput == true) {
-  mainArray.push(lowerCasedCharacters);
+  mainArray.push(...lowerCasedCharacters);
 }
 if (upperCasedInput == true) {
-  mainArray.push(upperCasedCharacters);
+  mainArray.push(...upperCasedCharacters);
 }
 console.log(mainArray);
 
+
+// Looping for length of password and adding a random character each time
+
+ for (let i = 0; i < userLength; i++) {
+
+  var randomCharacter = mainArray[Math.floor(Math.random() * mainArray.length)];
+  console.log(randomCharacter);
+  password += randomCharacter;
+  console.log(password);
+
+ }
+ return password;
+
 }
-
-// function generatePassword() {
-
-//   var userInput = [];
-//   var password = [];
-//   specInput();
-//   numInput();
-//   lowerCasedInput();
-//   upperCasedInput();
-
-// // Confirming Special Characters
-// function specInput() {
-//   if (confirm("Do you want special characters?")) {
-//     userInput.push(...specialCharacters);
-//   }
-//   else {
-//     console.log("No special characters");
-//   }
-//   console.log(userInput);
-//   return userInput;
-// }
-
-// // Confirming Numeric Characters
-// function numInput() {
-//   if (confirm("Do you want numeric characters?")) {
-//     userInput.push(...numericCharacters);
-//   }
-//   else {
-//     console.log("No numeric characters");
-//   }
-//   console.log(userInput);
-//   return userInput;
-// }
-
-// // Confirming Lower Cased Characters
-// function lowerCasedInput() {
-//   if (confirm("Do you want lower-cased characters?")) {
-//     userInput.push(...lowerCasedCharacters);
-//   }
-//   else {
-//     console.log("No lower-cased characters");
-//   }
-//   console.log(userInput);
-//   return userInput;
-// }
-
-// // Confirming Upper Cased Characters
-// function upperCasedInput() {
-//   if (confirm("Do you want upper-cased characters?")) {
-//     userInput.push(...upperCasedCharacters);
-//   }
-//   else {
-//     console.log("No upper-cased characters");
-//   }
-//   console.log(userInput);
-//   return userInput;
-// }
-
-// // Confirming Character Length of the Password
-//   var userLength = parseInt(prompt("How many characters would you like to have in your password between 8 and 128?"), 10);
-//   console.log(userLength + " characters long");
-
-//   //Randomly Selecting the Characters for the Password
-//   password = userLength[Math.floor(Math.random() * userInput.length)];
-//   console.log(password);
-// }
 
 // Write password to the #password input
 function writePassword() {

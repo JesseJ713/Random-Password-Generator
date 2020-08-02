@@ -100,11 +100,29 @@ function generatePassword() {
   //Declaring password as a string
   var password = "";
 
-  //User Input in regards to what kinds of characters they want
+  //Asking the User for what kind of character inputs they desire
   var specInput = confirm("Would you like Special Characters in your password?");
   var numInput = confirm("Would you like Numeric Characters in your password?");
   var lowerCasedInput = confirm("Would you like Lower-Cased Characters in your password?");
   var upperCasedInput = confirm("Would you like Upper-Cased Characters in your password?");
+
+  //If ALL Variables are False, User is Asked to Try Again
+  while ( specInput == false && numInput == false && lowerCasedInput == false && upperCasedInput == false) {
+    alert ("You must select at least ONE criteria");
+    specInput = confirm("Would you like Special Characters in your password?");
+    numInput = confirm("Would you like Numeric Characters in your password?");
+    lowerCasedInput = confirm("Would you like Lower-Cased Characters in your password?");
+    upperCasedInput = confirm("Would you like Upper-Cased Characters in your password?");
+  }
+
+  //Asking the user the length of the password (between 8 and 128 characters)
+  var userLength = parseInt(prompt("How long of a password would you like to generate? Please choose between 8 and 128 characters."));
+
+  //Establishing character validation
+  while (userLength < 8 || userLength > 128 || userLength === NaN || userLength === null || userLength === undefined || typeof(userLength) != "number") {
+    userLength = parseInt(prompt("Please choose between 8 and 128 characters for optimal password generated."));
+
+  }
 
 
 // Storing values of arrays if declared true

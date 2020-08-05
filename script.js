@@ -120,10 +120,10 @@ function generatePassword() {
 
   //Establishing character validation
   while (userLength < 8 || userLength > 128 || userLength === NaN || userLength === null || userLength === undefined || Number.isNaN(userLength)) {
-    userLength = parseInt(prompt("Please choose between 8 and 128 characters for optimal password generated."));
+    userLength = parseInt(prompt("Please choose between 8 and 128 characters for optimal password generation."));
 
   }
-  console.log(userLength + " is the length chosen");
+  // console.log(userLength + " is the length chosen");
 
 
 // Storing values of arrays into single array if declared true
@@ -139,7 +139,7 @@ if (lowerCasedInput == true) {
 if (upperCasedInput == true) {
   mainArray.push(...upperCasedCharacters);
 }
-console.log(mainArray);
+// console.log(mainArray);
 
 
 // Looping for length of password and adding a random character each time
@@ -147,9 +147,9 @@ console.log(mainArray);
  for (let i = 0; i < userLength; i++) {
 
   var randomCharacter = mainArray[Math.floor(Math.random() * mainArray.length)];
-  console.log(randomCharacter);
+  // console.log(randomCharacter);
   password += randomCharacter;
-  console.log(password);
+  // console.log(password);
 
  }
  return password;

@@ -1,6 +1,6 @@
 # Random-Password-Generator
 
-(INCLUDE URL HERE)
+https://jessej713.github.io/Random-Password-Generator/
 
 ![Portfolio Homepage Screenshot](/Password-Generator.PNG?raw=true "Portfolio")
 
